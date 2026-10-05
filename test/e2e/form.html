@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>お問い合わせ</title></head>
+<body>
+<form>
+  <table>
+    <tr><th>会社名</th><td><input name="company"></td></tr>
+    <tr><th>お名前（姓）<span>*</span></th><td><input name="last"></td></tr>
+    <tr><th>お名前（名）<span>*</span></th><td><input name="first"></td></tr>
+  </table>
+  <label for="mail">メールアドレス</label><input id="mail" type="email" name="mail">
+  <dl>
+    <dt>電話番号</dt><dd><input type="tel" name="tel"></dd>
+    <dt>郵便番号</dt><dd><input name="zip"></dd>
+  </dl>
+  <label>都道府県
+    <select name="pref">
+      <option value="">選択してください</option>
+      <option value="13">東京都</option>
+      <option value="27">大阪府</option>
+    </select>
+  </label>
+  <div><span>住所</span><input name="addr"></div>
+  <fieldset><legend>お問い合わせ種別</legend>
+    <label><input type="radio" name="kind" value="sales"> 製品について</label>
+    <label><input type="radio" name="kind" value="support"> サポート</label>
+  </fieldset>
+  <label>希望日 <input type="date" name="date"></label>
+  <label>FAX <input name="fax"></label>
+  <label>部署 <input name="dept" value="既存の値"></label>
+  <input type="hidden" name="token" value="x">
+  <label>お問い合わせ内容 <textarea name="body"></textarea></label>
+</form>
+<script>
+  // Count input events the way a framework would observe them.
+  window.inputEvents = 0;
+  document.addEventListener('input', () => window.inputEvents++);
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Jev Smart Paste",
+  "version": "0.1.0",
+  "description": "コピーした文章から、フォームの項目に合う情報を Jev で選び出して自動入力します。",
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus", "clipboardRead"],
+  "host_permissions": ["https://api.typesafe.ai/*"],
+  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"],
+  "background": { "service_worker": "src/background.js" },
+  "action": { "default_popup": "src/popup/popup.html", "default_title": "Jev Smart Paste" },
+  "options_page": "src/options/options.html",
+  "commands": {
+    "_execute_action": { "suggested_key": { "default": "Alt+Shift+V" }, "description": "Jev Smart Paste を開く" }
+  }
+}

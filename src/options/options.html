@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Jev Smart Paste 設定</title>
+  <link rel="stylesheet" href="../popup/popup.css">
+  <style>
+    body { width: auto; max-width: 560px; margin: 24px auto; padding: 0 16px; }
+    label { display: block; margin: 14px 0 4px; font-weight: 600; }
+    input[type=text], input[type=password], input[type=url], input[type=number] { width: 100%; padding: 7px 8px; border: 1px solid var(--line); border-radius: 6px; font: inherit; color: inherit; background: transparent; }
+    .hint { color: var(--muted); margin: 2px 0 0; font-size: 12px; }
+    .check { display: flex; gap: 6px; align-items: center; font-weight: normal; }
+    #save { margin-top: 20px; width: auto; padding: 7px 24px; }
+  </style>
+</head>
+<body>
+  <h1>Jev Smart Paste 設定</h1>
+  <label for="apiKey">TypeSafe API キー</label>
+  <input id="apiKey" type="password" autocomplete="off">
+  <p class="hint">キーはこのブラウザの拡張機能ストレージにだけ保存されます。</p>
+
+  <label for="threshold">入力する最低確率（0〜1）</label>
+  <input id="threshold" type="number" min="0" max="1" step="0.05">
+  <p class="hint">Jev が選んだ候補の確率がこれ未満なら入力しません。</p>
+
+  <label class="check"><input id="overwrite" type="checkbox"> 入力済みの項目も上書きする</label>
+
+  <details>
+    <summary>詳細設定</summary>
+    <label for="endpoint">エンドポイント</label>
+    <input id="endpoint" type="url">
+    <p class="hint">Jev 互換のリクエスト形式を受け付ける別ゲートウェイを使う場合に変更します。</p>
+    <label for="model">モデル</label>
+    <input id="model" type="text">
+  </details>
+
+  <button id="save" type="button">保存</button>
+  <p id="status" role="status"></p>
+  <script src="../lib/jev.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

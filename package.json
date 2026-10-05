@@ -1,0 +1,13 @@
+{
+  "name": "jev-smart-paste",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that fills web forms from pasted text using the Jev decision model",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:e2e": "node test/e2e/run.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Jev Smart Paste</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Jev Smart Paste</h1>
+    <a href="#" id="open-options" title="設定">設定</a>
+  </header>
+  <p id="no-key" class="warn" hidden>API キーが未設定です。<a href="#" id="open-options-2">設定を開く</a></p>
+  <textarea id="text" placeholder="ここに文章を貼り付け（メール署名、名刺の文字起こし、問い合わせ内容など）"></textarea>
+  <div class="row">
+    <button id="paste" type="button" class="secondary">クリップボードから貼り付け</button>
+    <button id="run" type="button">フォームに自動入力</button>
+  </div>
+  <p id="status" role="status"></p>
+  <ul id="results"></ul>
+  <button id="undo" type="button" class="secondary" hidden>元に戻す</button>
+  <script src="popup.js"></script>
+</body>
+</html>
